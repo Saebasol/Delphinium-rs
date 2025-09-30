@@ -1,0 +1,11 @@
+pub mod artist;
+pub mod character;
+pub mod file;
+pub mod galleryinfo;
+pub mod group;
+pub mod info;
+pub mod parody;
+pub mod resolved_image;
+pub mod tag;
+pub mod tags;
+pub mod language;

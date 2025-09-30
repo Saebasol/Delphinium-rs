@@ -1,0 +1,83 @@
+use crate::entities::{
+    artist::Artist, character::Character, file::File, group::Group, language::Language,
+    parody::Parody, tag::Tag,
+};
+use serde::{Deserialize, Serialize};
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct GalleryInfo {
+    pub date: chrono::NaiveDateTime,
+    pub galleryurl: String,
+    pub id: i32,
+    pub japanese_title: Option<String>,
+    pub language_localname: String,
+    pub language_url: String,
+    pub language: String,
+    pub title: String,
+    pub r#type: String,
+    pub video: Option<String>,
+    pub videofilename: Option<String>,
+    pub blocked: bool,
+    pub datepublished: Option<chrono::NaiveDate>,
+    pub artists: Vec<Artist>,
+    pub characters: Vec<Character>,
+    pub files: Vec<File>,
+    pub groups: Vec<Group>,
+    pub languages: Vec<Language>,
+    pub parodys: Vec<Parody>,
+    pub related: Vec<i32>,
+    pub scene_indexes: Vec<i32>,
+    pub tags: Vec<Tag>,
+}
+
+impl GalleryInfo {
+    pub fn new(
+        date: chrono::NaiveDateTime,
+        galleryurl: String,
+        id: i32,
+        japanese_title: Option<String>,
+        language_localname: String,
+        language_url: String,
+        language: String,
+        title: String,
+        r#type: String,
+        video: Option<String>,
+        videofilename: Option<String>,
+        blocked: bool,
+        datepublished: Option<chrono::NaiveDate>,
+        artists: Vec<Artist>,
+        characters: Vec<Character>,
+        files: Vec<File>,
+        groups: Vec<Group>,
+        languages: Vec<Language>,
+        parodys: Vec<Parody>,
+        related: Vec<i32>,
+        scene_indexes: Vec<i32>,
+        tags: Vec<Tag>,
+    ) -> Self {
+        Self {
+            date,
+            galleryurl,
+            id,
+            japanese_title,
+            language_localname,
+            language_url,
+            language,
+            title,
+            r#type,
+            video,
+            videofilename,
+            blocked,
+            datepublished,
+            artists,
+            characters,
+            files,
+            groups,
+            languages,
+            parodys,
+            related,
+            scene_indexes,
+            tags,
+        }
+    }
+}
