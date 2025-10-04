@@ -199,7 +199,7 @@ mod tests {
             .await;
         assert!(result.is_ok());
         assert!(
-            result.unwrap().result[0]
+            result.unwrap().results[0]
                 .artists
                 .contains(&"tamano_kedama".to_string())
         );
