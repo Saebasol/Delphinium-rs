@@ -37,7 +37,7 @@ impl Delphinium {
 
         let request_builder = self.client.request(method, &url).header(
             "User-Agent",
-            format!("Delphinium/{}", env!("CARGO_PKG_VERSION")),
+            format!("Delphinium-rs/{}", env!("CARGO_PKG_VERSION")),
         );
 
         let response = if let Some(json) = json_body {
